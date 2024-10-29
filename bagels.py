@@ -52,11 +52,12 @@ def getSecretNum():
     """Returns a string made up of NUM_DIGITS unique random digits."""
     numbers = list('0123456789')  # Create a list of digits 0 to 9.
     random.shuffle(numbers)  # Shuffle them into random order.
-
+    print(numbers)
     # Get the first NUM_DIGITS digits in the list for the secret number:
     secretNum = ''
     for i in range(NUM_DIGITS):
         secretNum += str(numbers[i])
+    print(secretNum)
     return secretNum
 
 def getClues(guess, secretNum):
@@ -76,6 +77,7 @@ def getClues(guess, secretNum):
         return 'Bagels'
     
     clues.sort()
+    
     return ' '.join(clues)
 
 if __name__ == '__main__':
